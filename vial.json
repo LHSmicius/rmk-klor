@@ -7,6 +7,13 @@
         "rows": 4,
         "cols": 12
     },
+    "customKeycodes": [
+        {
+            "name": "SWITCH",
+            "title": "Switch default output mode between USB/BLE",
+            "shortName": "Switch\nOutput"
+        }
+    ],
     "layouts": {
         "keymap": [
             [
