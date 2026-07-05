@@ -39,6 +39,9 @@ keys = """
                                Enter    _        _        _        _        _        _        Delete
 """
 
+[ble]
+enabled = true
+
 [behavior.combo]
 timeout = "150ms"
 combos = [
@@ -48,15 +51,21 @@ combos = [
 ]
 
 [split]
-connection = "serial"
+connection = "ble"
+# connection = "serial"
 
 [split.central]
 rows = 4
 cols = 6
 row_offset = 0
 col_offset = 0
+ble_addr = [0x18, 0xe2, 0x21, 0x80, 0xc0, 0xc7]
+# Battery monitoring configuration for central device
+battery_adc_pin = "P0_05"
+adc_divider_measured = 2000
+adc_divider_total = 2806
 # Serial port which is connected to right side
-serial = [{ instance = "UART0", tx_pin = "P0_08", rx_pin = "P0_22"}]
+# serial = [{ instance = "UART0", tx_pin = "P0_08", rx_pin = "P0_22"}]
 
 [split.central.matrix]
 matrix_type = "normal"
@@ -68,8 +77,13 @@ rows = 4
 cols = 6
 row_offset = 0
 col_offset = 6
+ble_addr = [0x7e, 0xfe, 0x73, 0x9e, 0x66, 0xe3]
+# Battery monitoring configuration for central device
+battery_adc_pin = "P0_05"
+adc_divider_measured = 2000
+adc_divider_total = 2806
 # Serial port which is connected to left side
-serial = [{ instance = "UART0", tx_pin = "P0_08", rx_pin = "P0_22"}]
+# serial = [{ instance = "UART0", tx_pin = "P0_08", rx_pin = "P0_22"}]
 
 [split.peripheral.matrix]
 matrix_type = "normal"
